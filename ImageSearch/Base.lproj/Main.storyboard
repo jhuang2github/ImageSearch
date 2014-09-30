@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="eEd-3q-lOE">
+    <dependencies>
+        <deployment version="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+    </dependencies>
+    <scenes>
+        <!--Image Collection View Controller-->
+        <scene sceneID="G9P-EK-Uc3">
+            <objects>
+                <collectionViewController storyboardIdentifier="ImageCollectionViewControllerId" autoresizesArchivedViewToFullSize="NO" id="Pok-SA-VG9" customClass="ImageCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="FWS-Yo-cvA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xgP-SH-3oV">
+                            <size key="itemSize" width="100" height="100"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageThumbnailCell" id="Qgr-5F-juo">
+                                <rect key="frame" x="0.0" y="64" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KQs-rT-Yph">
+                                            <rect key="frame" x="5" y="8" width="90" height="72"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <size key="customSize" width="100" height="100"/>
+                                <connections>
+                                    <segue destination="NiQ-HK-Lr3" kind="push" identifier="showImageDetail" id="MtE-Xl-RBX"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Pok-SA-VG9" id="3He-40-Iq9"/>
+                            <outlet property="delegate" destination="Pok-SA-VG9" id="pp7-NM-hE0"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="RgA-pP-RL4"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3A3-UY-j3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2912" y="-100"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="bJ2-Ze-m0k">
+            <objects>
+                <viewController storyboardIdentifier="ImageView" id="NiQ-HK-Lr3" customClass="ImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gy7-Un-VKz"/>
+                        <viewControllerLayoutGuide type="bottom" id="lGG-iO-q42"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q2e-Uu-VAB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nNC-tq-bkL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.22352942819999999" green="0.22352942819999999" blue="0.22352942819999999" alpha="1" colorSpace="deviceRGB"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="b4s-XK-scm"/>
+                    <connections>
+                        <outlet property="imageView" destination="nNC-tq-bkL" id="KBi-st-Scr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jm9-gW-IBm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3374" y="-96"/>
+        </scene>
+        <!--Search History View Controller-->
+        <scene sceneID="rmT-yK-idE">
+            <objects>
+                <tableViewController id="UfP-2O-4Im" customClass="SearchHistoryViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="imu-Mh-Vdc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search" id="k16-rw-mar">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="UfP-2O-4Im" id="uSI-uO-gye"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchCell" id="c4g-d9-4hJ">
+                                <rect key="frame" x="0.0" y="163" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c4g-d9-4hJ" id="SVd-pe-gBq">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Pok-SA-VG9" kind="push" identifier="showImageCollection" id="ta5-SL-qDN"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="UfP-2O-4Im" id="1Sr-iX-uLC"/>
+                            <outlet property="delegate" destination="UfP-2O-4Im" id="elh-We-NqX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="IOl-gx-FB2"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="hPt-9j-VRL" id="4H3-53-axm"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Fk-dq-va2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="TwK-Et-jHR">
+                    <connections>
+                        <outlet property="delegate" destination="UfP-2O-4Im" id="Hj2-UC-FfZ"/>
+                        <outlet property="searchContentsController" destination="UfP-2O-4Im" id="UKT-AA-Fxa"/>
+                        <outlet property="searchResultsDataSource" destination="UfP-2O-4Im" id="qdZ-4Y-4Ss"/>
+                        <outlet property="searchResultsDelegate" destination="UfP-2O-4Im" id="mfO-4H-3sO"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="BbP-pP-yZP">
+                    <connections>
+                        <outlet property="delegate" destination="UfP-2O-4Im" id="YQp-yG-eyg"/>
+                        <outlet property="searchContentsController" destination="UfP-2O-4Im" id="MX5-IL-8PC"/>
+                        <outlet property="searchResultsDataSource" destination="UfP-2O-4Im" id="euX-aX-fer"/>
+                        <outlet property="searchResultsDelegate" destination="UfP-2O-4Im" id="4Cx-Wt-gbL"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="1w3-Mj-Ktd">
+                    <connections>
+                        <outlet property="delegate" destination="UfP-2O-4Im" id="Bsf-w9-MpU"/>
+                        <outlet property="searchContentsController" destination="UfP-2O-4Im" id="fqF-ah-nam"/>
+                        <outlet property="searchResultsDataSource" destination="UfP-2O-4Im" id="uLL-IS-1Vd"/>
+                        <outlet property="searchResultsDelegate" destination="UfP-2O-4Im" id="szk-TU-ru2"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="hPt-9j-VRL">
+                    <connections>
+                        <outlet property="delegate" destination="UfP-2O-4Im" id="j2J-pT-v6f"/>
+                        <outlet property="searchBar" destination="k16-rw-mar" id="BX1-Xz-ti6"/>
+                        <outlet property="searchContentsController" destination="UfP-2O-4Im" id="XAS-RZ-fwr"/>
+                        <outlet property="searchResultsDataSource" destination="UfP-2O-4Im" id="oh0-zD-8zo"/>
+                        <outlet property="searchResultsDelegate" destination="UfP-2O-4Im" id="JGp-NK-3pb"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="2440" y="-100"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Pj4-cp-Vfu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eEd-3q-lOE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cfu-0Y-cSF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="UfP-2O-4Im" kind="relationship" relationship="rootViewController" id="AeM-uH-lf7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GDr-17-Hre" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1950" y="-100"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
