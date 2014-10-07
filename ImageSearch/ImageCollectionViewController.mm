@@ -134,7 +134,7 @@
         return;
     }
 
-    // Parse the data int the background.
+    // Parse the data in the background.
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^(void) {
         NSDictionary *responseDict = [NSJSONSerialization JSONObjectWithData:data
                                                                      options:NSJSONWritingPrettyPrinted

@@ -43,6 +43,14 @@
     return [NSURL URLWithString:[urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 }
 
+- (void)sendSynchronously:(NSString *)urlStr {
+    NSURLRequest *request = [NSURLRequest requestWithURL:[self urlFromString:urlStr]];
+	NSURLResponse *response = nil;
+	NSError *error = nil;
+	self.responseData = [[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error] mutableCopy];
+    [self.delegate parseResponse:@{DATA_KEY:self.responseData, ERROR_KEY:error}];
+}
+
 - (void)sendURLStringAsynchronously:(NSString *)urlStr {
     NSURLRequest *request = [NSURLRequest requestWithURL:[self urlFromString:urlStr]];
     [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
