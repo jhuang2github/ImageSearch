@@ -49,6 +49,9 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:kCellIdentifier];
+//       cell =(CustomCell*)[[[NSBundle mainBundle] loadNibNamed:@"CustomCell"
+//                                                         owner:self
+//                                                       options:nil] objectAtIndex:0];
     }
 
     NSString *search = @"";

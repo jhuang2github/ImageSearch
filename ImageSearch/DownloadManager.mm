@@ -51,9 +51,17 @@
     [self.delegate parseResponse:@{DATA_KEY:self.responseData, ERROR_KEY:error}];
 }
 
+//The sendAsynchronousRequest method is a relatively new addition, arriving in iOS 5. In terms of best practice there's little other than style to differentiate between it and the data delegate methods other than that a request created with the latter can be cancelled and a request created with the former can't. However the tidiness and hence the readability and greater improbability of bugs of the block-based sendAsynchronousRequest arguably give it an edge if you know you're not going to want to cancel your connections.
+//
+//References to sendSynchronousRequest are probably remnants of pre-iOS 5 patterns. Anywhere you see a sendSynchronousRequest, a sendAsynchronousRequest could be implemented just as easily and so as to perform more efficiently. I'd guess it was included originally because sometimes you're adapting code that needs to flow in a straight line and because there were no blocks and hence no 'essentially a straight line' way to implement an asynchronous call. I really can't think of any good reason to use it now.
 - (void)sendURLStringAsynchronously:(NSString *)urlStr {
     NSURLRequest *request = [NSURLRequest requestWithURL:[self urlFromString:urlStr]];
     [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
+//    [[NSURLConnection connectionWithRequest:request delegate:self]];
+//    [NSURLConnection sendAsynchronousRequest:request
+//                                       queue:(NSOperationQueue*)
+//                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+//    }]
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
