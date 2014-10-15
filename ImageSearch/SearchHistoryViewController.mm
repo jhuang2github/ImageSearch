@@ -23,6 +23,11 @@
     self.searches = [NSMutableOrderedSet orderedSetWithArray:@[]];
 }
 
+//- (void)viewDidUnload {
+//    [super viewDidUnload];
+//    self.labelCellNib = nil;
+//}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.tableView reloadData];
@@ -41,6 +46,17 @@
     return [self.searches count];
 }
 
+//- (id)labelCellNib {
+//    if (!_labelCellNib) {
+//        Class cls = NSClassFromString(@"UINib");
+//        if ([cls respondsToSelector:@selector(nibWithNibName:bundle:)]) {
+//            _labelCellNib = [[cls nibWithNibName:@"LabelCell"
+//                                          bundle:[NSBundle mainBundle]] retain];
+//        }
+//    }
+//    return _labelCellNib;
+//}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *kCellIdentifier = @"SearchCell";
@@ -49,9 +65,14 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:kCellIdentifier];
-//       cell =(CustomCell*)[[[NSBundle mainBundle] loadNibNamed:@"CustomCell"
-//                                                         owner:self
-//                                                       options:nil] objectAtIndex:0];
+//        if ([self labelCellNib]) {
+//            cell = (CustomCell *)[[[self labelCellNib] instantiateWithOwner:self
+//                                                                    options:nil] objectAtIndex:0];
+//        } else {
+//            cell = (CustomCell *)[[[NSBundle mainBundle] loadNibNamed:@"CustomCell"
+//                                                               owner:self
+//                                                             options:nil] objectAtIndex:0];
+//        }
     }
 
     NSString *search = @"";
