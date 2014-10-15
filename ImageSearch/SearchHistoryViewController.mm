@@ -47,11 +47,13 @@
 }
 
 //- (id)labelCellNib {
+//    // Note _labelCellNib is property, UINib *labelCellNib
 //    if (!_labelCellNib) {
 //        Class cls = NSClassFromString(@"UINib");
 //        if ([cls respondsToSelector:@selector(nibWithNibName:bundle:)]) {
 //            _labelCellNib = [[cls nibWithNibName:@"LabelCell"
 //                                          bundle:[NSBundle mainBundle]] retain];
+//            // or UINib *nib = [cls nibWithNibName:@"LabelCell" bundle:nil];  //nil means main bundle
 //        }
 //    }
 //    return _labelCellNib;
