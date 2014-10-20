@@ -7,11 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DownloadManager.h"
 
 
-@interface ImageCollectionViewController :
-    UICollectionViewController<UIScrollViewDelegate, ImageSearchDelegate>
+@interface ImageCollectionViewController : UICollectionViewController<UIScrollViewDelegate>
 
 @property (nonatomic) NSString *search;  // search keywords
 

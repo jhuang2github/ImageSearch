@@ -25,6 +25,15 @@
             _imageView.image = image;
         });
     });
+
+//    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+//    [queue addOperationWithBlock:^{
+//        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:_url];
+//        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//            _imageView.image = image;
+//        }];
+//    }];
+
 }
 
 @end

@@ -10,20 +10,29 @@
 
 @implementation AppDelegate
 
+//- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+//    return YES;
+//}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Programmatically create window
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    [self.window makeKeyAndVisible];
+
     return YES;
 }
-							
-- (void)applicationWillResignActive:(UIApplication *)application {
-}
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {
+- (void)applicationDidBecomeActive:(UIApplication *)application {
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
 }
 
-- (void)applicationDidBecomeActive:(UIApplication *)application {
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+}
+
+- (void)applicationWillResignActive:(UIApplication *)application {
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

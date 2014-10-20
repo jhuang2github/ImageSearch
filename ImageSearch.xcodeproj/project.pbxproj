@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0ED6762419F4B384005D2B54 /* ImageManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0ED6762319F4B384005D2B54 /* ImageManager.mm */; };
 		6597B00A19D8B1FD00F2ADF2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6597B00919D8B1FD00F2ADF2 /* Foundation.framework */; };
 		6597B00C19D8B1FD00F2ADF2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6597B00B19D8B1FD00F2ADF2 /* CoreGraphics.framework */; };
 		6597B00E19D8B1FD00F2ADF2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6597B00D19D8B1FD00F2ADF2 /* UIKit.framework */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0ED6762219F4B384005D2B54 /* ImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManager.h; sourceTree = "<group>"; };
+		0ED6762319F4B384005D2B54 /* ImageManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageManager.mm; sourceTree = "<group>"; };
 		6597B00619D8B1FD00F2ADF2 /* ImageSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6597B00919D8B1FD00F2ADF2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6597B00B19D8B1FD00F2ADF2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,6 +125,8 @@
 			children = (
 				65F1027919DA1213007AC7C6 /* Image.h */,
 				65F1027A19DA1213007AC7C6 /* Image.mm */,
+				0ED6762219F4B384005D2B54 /* ImageManager.h */,
+				0ED6762319F4B384005D2B54 /* ImageManager.mm */,
 				65F1027319D91622007AC7C6 /* DownloadManager.h */,
 				65F1027419D91622007AC7C6 /* DownloadManager.mm */,
 				65F101DF19D8C9BF007AC7C6 /* SearchHistoryViewController.h */,
@@ -198,6 +203,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = HuangImage;
 				TargetAttributes = {
+					6597B00519D8B1FD00F2ADF2 = {
+						DevelopmentTeam = JVC3T95J68;
+					};
 					6597B02619D8B1FD00F2ADF2 = {
 						TestTargetID = 6597B00519D8B1FD00F2ADF2;
 					};
@@ -255,6 +263,7 @@
 				6597B01A19D8B1FD00F2ADF2 /* AppDelegate.mm in Sources */,
 				6597B01619D8B1FD00F2ADF2 /* main.mm in Sources */,
 				65F1027B19DA1213007AC7C6 /* Image.mm in Sources */,
+				0ED6762419F4B384005D2B54 /* ImageManager.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,11 +381,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageSearch/ImageSearch-Prefix.pch";
 				INFOPLIST_FILE = "ImageSearch/ImageSearch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -386,11 +398,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageSearch/ImageSearch-Prefix.pch";
 				INFOPLIST_FILE = "ImageSearch/ImageSearch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
