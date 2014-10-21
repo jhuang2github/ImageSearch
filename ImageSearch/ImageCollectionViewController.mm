@@ -37,6 +37,7 @@
                                                object:nil];
 
     self.imageMgr = [ImageManager instance];
+    [self.imageMgr cleanup];
     [self.imageMgr loadImageURLsWithKeywords:self.search startIndex:0];
 }
 
@@ -61,6 +62,8 @@
     
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kIdentifier
                                                                            forIndexPath:indexPath];
+    // Note: we do not need to check if cell == nil or not for UICollectionView.
+    // In UITableView, we need to check if cell == nil or not.
     cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo-frame.png"]];
 
     int index = (int)indexPath.row;

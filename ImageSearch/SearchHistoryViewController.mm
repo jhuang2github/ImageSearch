@@ -113,19 +113,43 @@
     [self.searches insertObject:keyWords atIndex:0];
 }
 
+
+#pragma mark - table view delegate methods (mostly deal with view)
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 28;
+}
+
+- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+}
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleNone;
+}
+
+
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showImageCollection"]) {
-        NSIndexPath *indexPath = nil;
         NSString *search = @"";
-        
-        if(sender == self.searchDisplayController.searchResultsTableView) {
-            indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
-            search = [self.filteredSearches objectAtIndex:indexPath.row];
+
+//        NSIndexPath *indexPath = nil;
+//        if(sender == self.searchDisplayController.searchResultsTableView) {
+//            indexPath = [self.searchDisplayController.searchResultsTableView indexPathForSelectedRow];
+//            search = [self.filteredSearches objectAtIndex:indexPath.row];
+//        } else {
+//            indexPath = [self.tableView indexPathForSelectedRow];
+//            search = [self.searches objectAtIndex:indexPath.row];
+//        }
+
+        if ([sender isKindOfClass:[SearchHistoryViewController class]]) {
+            search = self.searchDisplayController.searchBar.text;
         } else {
-            indexPath = [self.tableView indexPathForSelectedRow];
-            search = [self.searches objectAtIndex:indexPath.row];
+            search = ((UITableViewCell *)sender).textLabel.text;
         }
         [self updateSearchOrder:search];
 

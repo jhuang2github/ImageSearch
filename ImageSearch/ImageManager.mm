@@ -43,17 +43,17 @@
         // debug(jhuang):
         self.serialQueue = dispatch_queue_create("mySerialQueue", DISPATCH_QUEUE_SERIAL);
         self.concurQueue = dispatch_queue_create("myConcurrentQueue", DISPATCH_QUEUE_CONCURRENT);
-        
-        self.lastPageStartIndex = -1;
-        self.prevStartIndex = INT_MIN;
-        self.images = [[NSMutableArray alloc] init];
+
+        [self cleanup];
     }
 
     return self;
 }
 
 - (void)cleanup {
-    [self.images removeAllObjects];
+    self.lastPageStartIndex = -1;
+    self.prevStartIndex = INT_MIN;
+    self.images = [[NSMutableArray alloc] init];
 }
 
 - (void)loadImageURLsWithKeywords:(NSString *)keywords startIndex:(int)startIndex {
