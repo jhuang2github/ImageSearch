@@ -5,6 +5,13 @@
 //  Created by Jingshu Huang on 9/28/14.
 //  Copyright (c) 2014 HuangImage. All rights reserved.
 //
+// References:
+// pass data between view controllers:
+// http://www.appcoda.com/storyboards-ios-tutorial-pass-data-between-view-controller-with-segue/
+// delegate:
+// http://www.roostersoftstudios.com/2011/04/12/simple-delegate-tutorial-for-ios-development/
+// GCD:
+// http://www.raywenderlich.com/60749/grand-central-dispatch-in-depth-part-1
 
 #import "ImageCollectionViewController.h"
 #import "SearchHistoryViewController.h"
